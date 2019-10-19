@@ -36,10 +36,7 @@ public class Driver {
 	private String licenseNumber;
 	@Column(length = 10, nullable=false)
 	private String pwd;
-	@OneToOne
-	@JoinColumn(name = "bid")
-	private Booking booking;
-	
+
 	public String getDid() {
 		return did;
 	}
@@ -70,12 +67,7 @@ public class Driver {
 	public void setLicenseNumber(String licenseNumber) {
 		this.licenseNumber = licenseNumber;
 	}
-	public Booking getBooking() {
-		return booking;
-	}
-	public void setBooking(Booking booking) {
-		this.booking = booking;
-	}
+
 	
 	
 	
