@@ -34,7 +34,7 @@ public class Customer {
 	@Column(length = 15, nullable = false)
 	private String dob;
 	@Column(length = 10, nullable=false)
-	private String Gender;
+	private String gender;
 	@Column(length = 40, nullable=false)
 	private String presentAddress;
 	@Column(length = 40)
@@ -76,10 +76,10 @@ public class Customer {
 		this.dob = dob;
 	}
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
 	public String getPresentAddress() {
 		return presentAddress;
