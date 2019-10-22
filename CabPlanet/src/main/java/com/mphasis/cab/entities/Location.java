@@ -24,7 +24,7 @@ public class Location {
 	        strategy = "com.mphasis.cab.util.StringPrefixedSequenceIdGenerator", 
 	        parameters = {
 	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
-	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "RO_"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "LO_"),
 	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d") })
 	@Column(length = 10)
 	private String lid;

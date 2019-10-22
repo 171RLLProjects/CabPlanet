@@ -1,4 +1,4 @@
-package com.mphasis.cab.controller;
+package com.mphasis.cab.controllers;
 
 import java.util.List;
 

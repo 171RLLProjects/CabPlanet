@@ -3,6 +3,7 @@ package com.mphasis.cab.entities;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mphasis.cab.entities.*;
 import com.mphasis.cab.util.StringPrefixedSequenceIdGenerator;
 
@@ -35,11 +36,12 @@ public class VehicleType {
 	private String vTypeId;
 	@Column(length = 35, nullable=false)
 	private String vType;
-	@Column(length = 35, nullable=false)
+	@Column(length = 2, nullable=false)
 	private int vSeatCapacity;
-	@Column(length = 35, nullable=false)
+	@Column(precision = 10, scale = 3, nullable = false)
 	private double farePK;
 	@OneToMany(mappedBy="vehicleType", fetch=FetchType.EAGER)
+	@JsonIgnore
 	private Set<Vehicle> vehicle;
 	public String getvTypeId() {
 		return vTypeId;

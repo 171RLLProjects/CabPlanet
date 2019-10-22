@@ -32,11 +32,17 @@ public class Driver {
 	private String address;
 	@Column(length = 10, nullable=false, unique = true)
 	private long contactno;
-	@Column(length = 35, nullable=false)
+	@Column(length = 35, nullable=false, unique = true)
 	private String licenseNumber;
 	@Column(length = 10, nullable=false)
 	private String pwd;
 
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 	public String getDid() {
 		return did;
 	}

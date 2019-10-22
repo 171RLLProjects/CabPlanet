@@ -32,7 +32,7 @@ public class Vehicle {
 	@Column(length = 35, nullable=false)
 	private String vName;
 	@Column(length = 35, nullable=false)
-	private int vnumber;
+	private String vnumber;
 	@ManyToOne
 	@JoinColumn(name="vTypeId")
 	private VehicleType vehicleType;
@@ -60,13 +60,14 @@ public class Vehicle {
 	public void setvName(String vName) {
 		this.vName = vName;
 	}
-	public int getVnumber() {
+	
+	
+	public String getVnumber() {
 		return vnumber;
 	}
-	public void setVnumber(int vnumber) {
+	public void setVnumber(String vnumber) {
 		this.vnumber = vnumber;
 	}
-	
 	public Driver getDriver() {
 		return driver;
 	}

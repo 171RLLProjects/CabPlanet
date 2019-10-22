@@ -36,21 +36,22 @@ public class Route {
 	@ManyToOne
 	@JoinColumn(name="destinationLocId")
 	private Location destination;
-	@Column(length = 25, nullable=false)
+	@Column(precision = 10, scale = 3, nullable = false)
 	private double distance;
-	@Column(length = 35, nullable=false)
+	@Column(length = 4, nullable=false)
 	private int duration;
-	
-	@Column(length =  25)
-	private String middlePoint;
-	
-	
+	@ManyToOne
+	@JoinColumn(name="middlePointLocId")
+	private Location middlePoint;
 	
 	
-	public String getMiddlePoint() {
+	
+	
+	
+	public Location getMiddlePoint() {
 		return middlePoint;
 	}
-	public void setMiddlePoint(String middlePoint) {
+	public void setMiddlePoint(Location middlePoint) {
 		this.middlePoint = middlePoint;
 	}
 	public String getRid() {
