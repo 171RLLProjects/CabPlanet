@@ -59,6 +59,62 @@ public class Booking {
 	@OneToOne
 	@JoinColumn(name ="did")
 	private Driver driver;
+	public String getBid() {
+		return bid;
+	}
+	public void setBid(String bid) {
+		this.bid = bid;
+	}
+	public Status getStatus() {
+		return status;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	public String getBookingDate() {
+		return bookingDate;
+	}
+	public void setBookingDate(String bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+	public String getJourneyDate() {
+		return journeyDate;
+	}
+	public void setJourneyDate(String journeyDate) {
+		this.journeyDate = journeyDate;
+	}
+	public double getTotalFare() {
+		return totalFare;
+	}
+	public void setTotalFare(double totalFare) {
+		this.totalFare = totalFare;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+	public Route getRoute() {
+		return route;
+	}
+	public void setRoute(Route route) {
+		this.route = route;
+	}
+	public Driver getDriver() {
+		return driver;
+	}
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+	}
+	
+	
 	
 	
 	
