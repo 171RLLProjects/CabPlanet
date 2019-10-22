@@ -118,7 +118,7 @@ public class BookingController {
 			return new ResponseEntity<List<Booking>>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@RequestMapping(value="/customer/{cid}",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/customerb/{cid}",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<List<Booking>> getBookingByCustomer(@PathVariable("cid")String cid) throws BusinessException
 	{
@@ -135,7 +135,7 @@ public class BookingController {
 		}
 		return new ResponseEntity<List<Booking>>(bookings,HttpStatus.OK);
 	}
-	@RequestMapping(value="/vehicle/{vid}",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/vehicleb/{vid}",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<List<Booking>> getBookingByVehicle(@PathVariable("vid")String vid) throws BusinessException
 	{
@@ -153,7 +153,7 @@ public class BookingController {
 		
 	}
 	
-	@RequestMapping(value="/route/{rid}",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/routeb/{rid}",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public  ResponseEntity<List<Booking>>getBookingByRoute(@PathVariable("rid")String rid) throws BusinessException
 	{
