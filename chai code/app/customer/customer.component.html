@@ -1,0 +1,55 @@
+<table>
+    <tr>
+      <td>Customer Id</td>
+      <td>{{cid}}</td>
+    </tr>
+    
+    <tr>
+      <td>Customer First Name</td>
+      <td>{{cfname}}</td>
+    </tr>
+    
+    <tr *ngIf='showDetails'>
+      <td>Customer Last Salary</td>
+      <td>{{clname}}</td>
+    </tr>
+    
+    <tr *ngIf='showDetails'>
+      <td>Date Of Birth</td>
+      <td>{{dob}}</td>
+    </tr>
+    
+    <tr *ngIf='showDetails'>
+      <td>Gender</td>
+      <td>{{gender}}</td>
+    </tr>
+    
+    <tr>
+        <td>Present Address</td>
+        <td>{{presentAddress}}</td>
+      </tr>
+      
+      <tr>
+        <td>Permanent Address</td>
+        <td>{{permanentAddress}}</td>
+      </tr>
+      
+      <tr *ngIf='showDetails'>
+        <td>Phone Number</td>
+        <td>{{phoneNumber}}</td>
+      </tr>
+      
+      <tr *ngIf='showDetails'>
+        <td>Email</td>
+        <td>{{email}}</td>
+      </tr>
+      
+      <tr *ngIf='showDetails'>
+        <td>Password</td>
+        <td>{{pwd}}</td>
+      </tr>
+      
+    
+    </table>
+    <button (click)='toggleDetails()'>{{showDetails?'hide': 'show'}} Details</button>
+    <input type="button" class="btn btn-primary" value="Go Back" (click)="backToCustomerList()">

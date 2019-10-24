@@ -1,0 +1,29 @@
+<table>
+    <tr>
+    <td>Customer Id</td>
+    <td>Customer First Name</td>
+    <td>Customer Last Name</td>
+    <td>Date Of Birth</td>
+    <td>Gender</td>
+    <td>Present Address</td>
+    <td>Permanent Address</td>
+    <td>Phone Number</td>
+    <td>Email Id</td>
+    <td>Password</td>
+  </tr>
+  <tr *ngFor='let cust of customer'>
+    <td><a [routerLink]= "['/customer',cust.cid]">{{cust.cid}}</a></td>
+    <td>{{cust.cfname}}</td>
+    <td>{{cust.clname}}</td>
+    <td>{{cust.dob}}</td>
+    <td>{{cust.gender}}</td>
+    <td>{{cust.presentAddress}}</td>
+    <td>{{cust.permanentAddress}}</td>
+    <td>{{cust.phoneNumber}}</td>
+    <td>{{cust.email}}</td>
+    <td>{{cust.pwd}}</td>
+   
+    <td><button class="btn btn-primary" (click)="edit(cust)">Edit</button></td>
+      <td><button class="btn btn-primary" (click)="delete(cust)">Delete</button></td>
+  </tr>
+  </table>
