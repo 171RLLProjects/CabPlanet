@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <td>Location id</td><br/><br/>
+    <td>Location name</td><br/><br/>
+    <td>Operations</td><br/><br/>
+  </tr>
+  <tr *ngFor='let loc of locations'>
+    <td>{{loc.lid}}</td><br/><br/>
+    <td>{{loc.lname}}</td><br/> 
+    <td><button class="btn btn-primary" (click)="edit(loc)">Edit</button>
+    <button class="btn btn-primary" (click)="delete(loc)">delete</button></td>
+  </tr>
+</table>

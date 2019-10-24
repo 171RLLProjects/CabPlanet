@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <td>Admin id</td><br/><br/>
+    <td>username</td><br/><br/>
+    <td>Operations</td><br/><br/>
+  </tr>
+  <tr *ngFor='let admin of admins'>
+    <td>{{admin.aid}}</td><br/><br/>
+    <td>{{admin.userName}}</td><br/>
+   <td> <button class="btn btn-primary" (click)="delete(admin)">delete</button></td>
+  </tr>
+</table>
