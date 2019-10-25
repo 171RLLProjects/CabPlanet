@@ -1,0 +1,47 @@
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+
+<form name="form" (ngSubmit)="f.form.valid && addVehicleType()" #f="ngForm" novalidate>
+
+<div class="form-group">
+      <label>VehcileType Id</label>
+      <input type="text" name="vTypeId" [(ngModel)]="vehicletype.vTypeId" disabled class="control" />&nbsp;Will be auto generated
+      </div>
+
+  <div class="form-group">
+  <label for="farePK">Fare Per KM</label>
+  <input type="text" name="farePK" [(ngModel)]="vehicletype.farePK" placeholder="Fare/KM" class="form-control" #farePK="ngModel" [ngClass]="{ 'is-invalid': f.submitted && farePK.invalid }" required/>
+  <div *ngIf="f.submitted && farePK.invalid" class="invalid-feedback">
+      <div *ngIf="farePK.errors.required">Fare/KM is required</div>
+  </div>    
+</div>
+  <div class="form-group">
+  <label for="vSeatCapacity">Seat Capacity</label>
+  <input type="text" name="vSeatCapacity" [(ngModel)]="vehicletype.vSeatCapacity" placeholder="Seats"class="form-control" #vSeatCapacity="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vSeatCapacity.invalid }" required/>
+  <div *ngIf="f.submitted && vSeatCapacity.invalid" class="invalid-feedback">
+      <div *ngIf="vSeatCapacity.errors.required">Seat Capacity is required</div>
+  </div>    
+</div>
+  
+
+<div class="form-group">
+  <label for="vType">Vehicle Type</label>&nbsp;
+ <label class="radio-inline"> 
+    <input type="radio" name="vType" value="AC" [(ngModel)]="vehicletype.vType" required #vType="ngModel" required />AC&nbsp;
+</label>
+  <label class="radio-inline">
+  <input type="radio" name="vType" value="NONAC" [(ngModel)]="vehicletype.vType" #vType="ngModel"  required />NON-AC 
+</label>
+<div *ngIf="vType.errors?.required">
+  Vehicle type is required</div>
+  </div>
+
+  <button class="btn btn-primary">Register</button>
+   
+  </form>
+</div>
+</div>
+</div>
+</div>

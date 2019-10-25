@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <td>Driver Id</td>
+    <td>Driver Name</td>
+    <td>Address</td>
+    <td>Contact number</td>
+    <td>License Number</td>
+  </tr>
+  <tr *ngFor="let dri of drivers">
+    <td><a [routerLink]= "['/driver',dri.did]">{{dri.did}}</a></td>
+    <td>{{dri.dname}}</td>
+    <td>{{dri.address}}</td>
+    <td>{{dri.contactno}}</td>
+    <td>{{dri.licenseNumber}}</td>
+    <td><button class="btn btn-primary" (click)="edit(dri)">Edit</button></td>
+    <td> <button class="btn btn-danger" (click)="delete(dri)">Delete</button></td>
+   
+    <td><button class="btn btn-primary" (click)="accept(dri)">Accept</button></td>
+    <td> <button class="btn btn-danger" (click)="delete(dri)">Reject</button></td>
+
+  </tr>
+
+</table>

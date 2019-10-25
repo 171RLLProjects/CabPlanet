@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <td>Vehicle Id</td>
+    <td>Vehicle Name</td>
+ </tr>
+  <tr *ngFor="let veh of vehicles">
+    <td><a [routerLink]= "['/vehicle',veh.vid]">{{veh.vid}}</a></td>
+    <td>{{veh.vName}}</td>
+    <td><button class="btn btn-primary" (click)="edit(veh)">Edit</button></td>
+    <td> <button class="btn btn-danger" (click)="delete(veh)">Delete</button></td>
+  </tr>
+
+</table>

@@ -1,0 +1,59 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+  
+                <form name="form" (ngSubmit)="f.form.valid && addVehicle()" #f="ngForm" novalidate>
+
+<div class="form-group">
+<label>Vehicle ID</label>
+<input type="text" name="vid" disabled class="control"/>
+</div>
+
+  <div class="form-group">
+  <label for="vName">Vehicle Name</label>
+  <input type="text" name="vName" [(ngModel)]="vehicle.vName" placeholder="Vehicle name" class="form-control" #vName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vName.invalid }" required/>
+  <div *ngIf="f.submitted && vName.invalid" class="invalid-feedback">
+  <div *ngIf="vName.errors.required">Vehicle Name is required</div>
+</div>      
+</div>
+  
+  <div class="form-group">
+    <label for="vnumber">Vehicle Number</label>
+    <input type="text" name="vnumber" [(ngModel)]="vehicle.vnumber" placeholder="Vehicle number" class="form-control" #vnumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vnumber.invalid }" required/> 
+    <div *ngIf="f.submitted && vnumber.invalid" class="invalid-feedback">
+        <div *ngIf="vnumber.errors.required">Vehicle Number is required</div>
+      </div>        
+  </div>
+
+  <br/><br/>
+  
+  <div class="form-group"
+    [class.has-error] = "driver.touched && driver.invalid">
+    <label for="driver" class="control-label">Driver</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select id="driver" required #driver="ngModel" name="driver" [(ngModel)]="did" class="form-control" #driver="ngModel" required> 
+      <option value = "-1">Select Driver</option>
+      <option *ngFor='let dri of drivers' [value] = "dri.did">{{dri.dname}}</option>
+    </select>
+   <span class="help-block" *ngIf="driver.touched && driver.invalid">Driver is required</span>
+   </div> 
+          
+   
+    <div class="form-group">
+      <label for="vehicleType" class="control-label">VehicleType</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <select id="vehicleType" required #vehicleType="ngModel" name="vehicleType" [(ngModel)]="vTypeId" class="form-control" > 
+        
+        <option *ngFor='let veht of vehicletypes' [value] = "veht.vTypeId">{{veht.vSeatCapacity}}/{{veht.vType}}</option>
+      </select>
+      </div>&nbsp;&nbsp;&nbsp;
+ 
+    <button class="btn btn-primary">Register</button>
+    
+  
+  </form>
+</div>
+</div>
+</div>
+</div>

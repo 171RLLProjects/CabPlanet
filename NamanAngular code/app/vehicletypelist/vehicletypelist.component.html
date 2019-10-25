@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <td>VehicleType Id</td>
+    <td>Fare/KM</td>
+    <td>Seat Capacity</td>
+    <td>Vehicle Type</td>
+  </tr>
+  <tr *ngFor="let veht of vehicletypes">
+    <td><a [routerLink]= "['/vehicletype',veht.vTypeId]">{{veht.vTypeId}}</a></td>
+    <td>{{veht.farePK}}</td>
+    <td>{{veht.vSeatCapacity}}</td>
+    <td>{{veht.vType}}</td>
+    <td><button class="btn btn-primary" (click)="edit(veht)">Edit</button></td>
+    <td> <button class="btn btn-danger" (click)="delete(veht)">Delete</button></td>
+  </tr>
+
+</table>
