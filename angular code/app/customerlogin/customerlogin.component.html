@@ -1,0 +1,36 @@
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h2>Customer Login</h2>
+              <form name="form" (ngSubmit)="f.form.valid && customerLogin()" #f="ngForm" novalidate>
+  <br/>
+  <div class="form-group">
+  <label for="userName">Username</label>
+ 
+  <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="customer.phoneNumber" placeholder = "phoneNumber" #phoneNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phoneNumber.invalid }" required /><br/><br/>
+  <br/><div *ngIf="f.submitted && phoneNumber.invalid" class="invalid-feedback">
+      <div *ngIf="phoneNumber.errors.required">phoneNumber is required</div>
+  </div>
+
+</div>
+<div class="form-group">
+    <label for="pwd">Password</label>
+   
+    <input type="password" class="form-control" name="pwd" [(ngModel)]="customer.pwd" #pwd="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pwd.invalid }" required minlength="6" /><br/><br/>
+    <br/><div *ngIf="f.submitted && pwd.invalid" class="invalid-feedback">
+        <div *ngIf="pwd.errors.required">Password is required</div>
+        <div *ngIf="pwd.errors.minlength">Password must be at least 8 characters</div>
+    </div>
+  
+  
+  </div>
+  <div class="form-group">
+  <input type="submit" value="SignIn" class="form-controller">
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  

@@ -1,0 +1,24 @@
+<table>
+    <tr>
+      <td>Vehicle Id</td>
+      <td>{{vehicle.vid}}</td>
+    </tr>  
+    <tr>
+      <td>Vehicle Name</td>
+      <td>{{vehicle.vName}}</td>
+    </tr>  
+      <td>Vehicle Number</td>
+      <td>{{vehicle.vnumber}}</td>
+    <tr>  
+      <td>Driver</td>
+      <td>{{vehicle.driver.dname}}</td>
+    </tr>  
+    <tr>
+      <td>Seats/Vehicle Type</td>
+      <td>{{vehicle.vehicleType.vSeatCapacity}}/{{vehicle.vehicleType.vType}}</td>
+    </tr>
+   </table>
+
+   <button>
+      <input type="button" class="btn btn-primary" value="GoBack" (click)="backTovehiclelist()">
+      </button>

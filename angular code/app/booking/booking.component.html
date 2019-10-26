@@ -1,0 +1,36 @@
+
+<table>
+  <tr>
+  <td>Booking ID</td>
+  <td>{{booking.bid}}</td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td>{{booking.status}}</td>
+    </tr>
+  <tr>
+  <td>Booking Date</td>
+  <td>{{booking.bookingDate}}</td>
+  </tr>
+  <tr>
+  <td>Journey date</td>
+  <td>{{booking.journeyDate}}</td>
+  </tr>
+  <tr>
+  <td>Total Fare</td>
+  <td>{{booking.totalFare}}</td>
+  </tr>
+  <tr>
+  <td>Customer</td>
+  <td>{{booking.customer.cname}}</td>
+  </tr>
+  <tr>
+  <td>Vehicle</td>
+  <td>{{booking.vehicle.vName}}</td>
+  </tr>
+  <tr>
+  <td>Route</td>
+  <td>{{booking.route.destination.lname}}/{{booking.route.source.lname}}</td>
+  </tr>
+  </table>
+  <input type="button" class="btn btn-primary" value="Cancel Booking" (click)="cancelBooking()"/>

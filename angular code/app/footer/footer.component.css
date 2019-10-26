@@ -1,0 +1,13 @@
+.container {
+    height: 350px;
+    width: 9000px;
+    background-color:whitesmoke;
+    float: left;
+    overflow: hidden;
+    margin: 20px;
+    }
+    
+    img {
+    max-width: 100%;
+    
+    }

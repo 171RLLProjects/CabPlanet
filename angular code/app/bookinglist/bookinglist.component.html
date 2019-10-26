@@ -1,0 +1,29 @@
+<table>
+    <tr>
+      <td>Booking Id</td>
+      <td>Booking Date</td>
+      <td>Journey Date</td>
+      <td>Status</td>
+      <td>Customer</td>
+      <td>Vehicle</td>
+      <td>Route</td>
+    </tr>
+    <tr *ngFor="let book of bookings">
+      <td>{{book.bid}}</td>
+      <td>{{book.bookingDate}}</td>
+      <td>{{book.journeyDate}}</td>
+      <td>{{book.status}}</td>
+      <td>{{book.customer.cid}}</td>
+      <td>{{book.vehicle.vid}}</td>
+      <td>{{book.route.rid}}</td>
+
+      <td><button class="btn btn-primary" (click)="edit(veht)">Edit</button></td>
+      
+    </tr>
+
+  
+  </table>
+  
+  <button>
+    <input type="button" class="btn btn-primary" value="GoBack" (click)="backTohome()">
+    </button><br><br><br><br>

@@ -1,0 +1,100 @@
+
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<h3>Booking Form</h3>
+<form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+<div class="form-group">
+<label>Booking Id</label>
+<input type="text" name="bid" [(ngModel)]="booking.bid" class="form-control" disabled>
+</div>
+
+
+ 
+<div class="form-group">
+<label for="bookingdate">BookingDate</label>
+<input type="text" class="form-control" name="bookingdate" [(ngModel)]="booking.bookingDate" #bookingdate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bookingdate.invalid }" required/>
+<div *ngIf="f.submitted && bookingdate.invalid" class="invalid-feedback">
+<div *ngIf="bookingdate.errors.required">bookingdate is required</div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="journeyDate">JourneyDate</label>
+<input type="text" class="form-control" name="journeydate" [(ngModel)]="booking.journeyDate" #journeyDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && journeyDate.invalid }" required/>
+<div *ngIf="f.submitted && journeyDate.invalid" class="invalid-feedback">
+<div *ngIf="journeyDate.errors.required">journeyDate is required</div>
+</div>
+</div>
+ 
+<div class="form-group">
+<label for="VehicleType"class="control-label">VehicleType</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="vehicleType" required #vehicleType="ngModel" name="vehicleType" [(ngModel)]="vTypeId" class="form-control"
+(change)="onSelect($event.target.value)">
+
+<option *ngFor="let vt of vehicleTypes" [value]="vt.vTypeId">
+        {{vt.vType}}/{{vt.vSeatCapacity}}
+</option>
+</select>
+</div>
+
+
+ 
+<div class="form-group">
+  <label for="vehicle"class="control-label">Vehicle</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <select id="vehicle" required #vehicle="ngModel" name="vehicle" [(ngModel)]="vid" class="form-control">
+ 
+  <option *ngFor="let vh of vehicles" [value]="vh.vid">
+          {{vh.vName}}
+  </option>
+  </select>
+  </div>
+
+<div class="form-group">
+<label for="Source" class="control-label">SourceLocation</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="source" required #source="ngModel" name="source" [(ngModel)]="slid" class="form-control">
+<option value="-1 ">Select sourceLocation</option>
+<option *ngFor="let location of locations" [value]="location.lid">
+           {{location.lname}}
+</option>
+</select>
+</div>
+ 
+<div class="form-group">
+<label for="destination" class="control-label">DestinationLocation</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="destination"required #destination="ngModel" name="destination" [(ngModel)]="dlid" class="form-control">
+<option value="-1 ">Select DestinationLocation</option>
+<option *ngFor="let location of locations" [value]="location.lid">
+                {{location.lname}}
+</option>
+</select>
+</div>
+<div class="form-group">
+<button class="btn btn-primary" (click)="calculateFare()">CalculateFare</button>
+</div>
+ <div class="form-group">
+    <label>Totalfare</label>
+    <input type="text" class="form-control" name="totalfare" [(ngModel)]="booking.totalFare" />
+    </div>
+  
+ <!-- <div class="form-group">
+<label for="totalfare">Totalfare</label>
+<input type="text" class="form-control" name="totalfare" [(ngModel)]="booking.totalFare" #totalfare="ngModel" [ngClass]="{ 'is-invalid': f.submitted && totalfare.invalid }" required/>
+<div *ngIf="f.submitted && totalfare.invalid" class="invalid-feedback">
+<div *ngIf="totalfare.errors.required">totalfare is required</div>
+</div>
+</div>  -->
+ 
+<input type="submit" value="addBooking" (click)="addBooking()"><br/><br/>
+<br/><br/>
+</form>
+</div>
+</div>
+</div>
+</div>
+
